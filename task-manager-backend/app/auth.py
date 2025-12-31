@@ -3,11 +3,11 @@ from jose import JWTError, jwt
 from passlib.context import CryptContext
 from fastapi.security import OAuth2PasswordBearer
 from sqlalchemy.orm import Session
+from app.database import get_db
 from app.models import User
 
 
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="auth/login")
-
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/auth/login")
 
 
 SECRET_KEY = "f1977e123b04bac43cfde0b2b2debe0268fd3b19be5e87c615de19ca78212e36"
